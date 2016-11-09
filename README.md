@@ -1,4 +1,5 @@
-# Laravel middleware for loggin vistors IP address on every request
+# Laravel middleware for logging vistors IP address
+Middleware works on every request
 
 # Installation
 
