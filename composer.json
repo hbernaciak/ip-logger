@@ -10,5 +10,10 @@
       "email": "hubi@hubi.pl"
     }
   ],
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": {
+      "Hbernaciak\\IpLogger": "src/"
+    }
+  }
 }
