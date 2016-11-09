@@ -6,7 +6,7 @@ Middleware works on every request
 Via Composer
 
 ``` bash
-$ composer require "hbernaciak/ip-logger":"1.0.0.@dev"
+$ composer require hbernaciak/ip-logger
 ```
 
 Add service provider to your app.php file to 'providers'
