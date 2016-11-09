@@ -1,0 +1,14 @@
+{
+  "name": "hbernaciak/ip-logger",
+  "description": "Laravel middleware for loggin vistors IP address",
+  "require": {
+    "laravel/laravel": "5.2^"
+  },
+  "authors": [
+    {
+      "name": "hbernaciak",
+      "email": "hubi@hubi.pl"
+    }
+  ],
+  "minimum-stability": "dev"
+}
