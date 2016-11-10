@@ -13,8 +13,12 @@
   ],
   "minimum-stability": "dev",
   "autoload": {
-    "psr-0": {
-      "Hbernaciak\\IpLogger": "src/"
-    }
+		    "psr-0": {
+		      "Hbernaciak\\IpLogger\\": "src/"
+		    },
+            "psr-4": {
+              "Hbernaciak\\IpLogger\\": "src/"
+            }
+		}
   }
 }
