@@ -16,13 +16,27 @@ class IpLoggerMiddleware
      */
     public function __construct()
     {
-        if (isset($_SERVER['REMOTE_ADDR'])) {
-            try {
-                DB::statement('INSERT INTO `els_ip_logs` (`ip_address`) VALUES (INET6_ATON(?))',
-                    [$_SERVER['REMOTE_ADDR']]);
-            } catch (\Exception $e) {
-                // sorry not this time
-            }
+        // cloudflare support
+        if (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) {
+            $this->save($_SERVER['HTTP_CF_CONNECTING_IP']);
+        } elseif (isset($_SERVER['REMOTE_ADDR'])) {
+            $this->save($_SERVER['REMOTE_ADDR']);
+        }
+    }
+
+    /**
+     * Try to save IP into DB.
+     *
+     * @param  string $ip
+     * @return mixed
+     */
+    private function save($ip)
+    {
+        try {
+            DB::statement('INSERT INTO `els_ip_logs` (`ip_address`) VALUES (INET6_ATON(?))',
+                [$ip]);
+        } catch (\Exception $e) {
+            // sorry not this time
         }
     }
 
@@ -37,4 +51,5 @@ class IpLoggerMiddleware
     {
         return $next($request);
     }
+
 }
