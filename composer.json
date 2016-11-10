@@ -1,5 +1,6 @@
 {
   "name": "hbernaciak/ip-logger",
+  "version": "1.0.2",
   "description": "Laravel middleware for loggin vistors IP address",
   "require": {
         "php": ">=5.6.0",
